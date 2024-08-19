@@ -31,18 +31,6 @@ The pipeline utilizes a combination of Mask R-CNN and custom HSV (Hue, Saturatio
     pip install -r requirements.txt
     ```
 
-## Usage
-
-1. Place the input images in the `input_images/` folder. Supported formats are `.jpg` and `.png`.
-
-2. Run the pipeline:
-
-    ```bash
-    python garment_masking_pipeline.py
-    ```
-
-3. The output masks and processed images will be saved in the `output_mask_image/` folder.
-
 ## HSV Bounds Calculation
 
 To fine-tune the HSV bounds for each image, I created a Python script that uses the OpenCV GUI to dynamically adjust the HSV ranges. The script allows you to visually inspect the effect of HSV bounds on the image and save the optimal values. Screenshots of this process will be added to the repository.
@@ -63,6 +51,21 @@ To use the HSV bounds calculation tool:
 Here is how the boundary calculator works
 
 ![Screenshot 2024-08-17 164438](https://github.com/user-attachments/assets/5825761a-24d9-4496-9697-7ab919b0e128)
+
+
+## Usage
+
+1. Place the input images in the `input_images/` folder. Supported formats are `.jpg` and `.png`.
+   
+2. Input custom HSV values for your images that you calculated using the HSV boundary calculator mentioned above.
+
+3. Run the pipeline:
+
+    ```bash
+    python garment_masking_pipeline.py
+    ``` 
+
+4. The output masks and processed images will be saved in the `output_mask_image/` folder.
 
 
 ## Output
