@@ -76,9 +76,25 @@ The pipeline produces two types of outputs for each image:
 
 Here are some sample outputs:
 
-- **Input Image**: image_1.jpg
-- **Binary Mask**: mask_image_1.jpg
-- **Processed Image**: processed_image_1.jpg
+- **Input Image**:
+  
+![image_10](https://github.com/user-attachments/assets/d23d3cb2-846c-439b-8d22-1df9758de24a)
+
+![image_8](https://github.com/user-attachments/assets/41c2abc3-336a-4505-892c-c6b427c3be1d)            
+
+- **Binary Mask**:
+
+![mask_image_10](https://github.com/user-attachments/assets/bbf6bcb0-24ab-4f04-89d6-e4e1a2efb17d)
+
+
+![mask_image_8](https://github.com/user-attachments/assets/7c44e95f-fe7e-4930-88db-e2927da15483)
+
+- **Processed Image**:
+
+![processed_image_10](https://github.com/user-attachments/assets/a9f356ff-8cff-47f4-865c-795489722926)
+
+
+![processed_image_8](https://github.com/user-attachments/assets/740a6754-536d-4c6f-975a-82b8181ebdde)
 
 ## Assumptions and Decisions
 
