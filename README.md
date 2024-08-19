@@ -33,7 +33,7 @@ The pipeline utilizes a combination of Mask R-CNN and custom HSV (Hue, Saturatio
 
 ## HSV Bounds Calculation
 
-To fine-tune the HSV bounds for each image, I created a Python script that uses the OpenCV GUI to dynamically adjust the HSV ranges. The script allows you to visually inspect the effect of HSV bounds on the image and save the optimal values. Screenshots of this process will be added to the repository.
+To fine-tune the HSV bounds for each image, I created a Python script that uses the OpenCV GUI to dynamically adjust the HSV ranges. The script allows you to visually inspect the effect of HSV bounds on the image and save the optimal values. 
 
 To use the HSV bounds calculation tool:
 
