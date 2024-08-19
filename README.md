@@ -97,7 +97,7 @@ Here are some sample outputs:
 
 - **TRYONline Masking Pipeline** : My project TRYONline- A virtual garment trial room(https://github.com/Jaxkirat/TRYONline), uses a framework called Dressing-in-order (https://github.com/cuiaiyu/dressing-in-order). Since, it was already a built framework, with a number scripts and models inter-linkled with one another. Hence, isolating just the garment-masking-model from the framework was not possible in such a short-time frame.
 
-- **U.Net Model** : I tried building a garment-masking-model using U.net but a robust and accurate model requires a well-labeled and annotated data set. I tried finding a dataset, but the U.net model I was building required the following 3 types of file for each image :
+- **U.Net Model** : I tried building a garment-masking-model using U.net but a robust and accurate model requires a well-labeled and annotated data set. I tried finding a dataset, but the U.net model I was building required the following 3 types of files for each image :
     - The input image
     - A json file that has the garments annotated 
     - And a final masked image
