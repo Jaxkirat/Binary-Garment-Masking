@@ -58,7 +58,7 @@ To use the HSV bounds calculation tool:
 
 3. Adjust the trackbars to set the lower and upper HSV bounds. Press `s` to save the values for the current image, or `ESC` to move to the next image.
 
-###Example
+### Example
 
 Here is how the boundary calculator works
 
@@ -90,12 +90,28 @@ Here are some sample outputs:
 
 ![1724056628367](https://github.com/user-attachments/assets/cd9ad92f-3912-495c-b574-e4cec4341c77)
 
+## Model Considerations
 
-## Assumptions and Decisions
+- **TRYONline Masking Pipeline** : My project TRYONline- A virtual garment trial room(https://github.com/Jaxkirat/TRYONline), uses a framework called Dressing-in-order (https://github.com/cuiaiyu/dressing-in-order). Since, it was already a built framework, with a number scripts and models inter-linkled with one another. Hence, isolating just the garment-masking-model from the framework was not possible in such a short-time frame.
 
-- **Pretrained Model**: The Mask R-CNN model is pretrained on COCO, which provides a good starting point for detecting garments.
-- **Custom HSV Bounds**: Custom HSV bounds were defined based on the filename to refine the mask for each image.
-- **Thresholding**: A score threshold of 0.5 was used to filter out low-confidence predictions from Mask R-CNN.
+- **U.Net Model** : I tried building a garment-masking-model using U.net but a robust and accurate model requires a well-labeled and annotated data set. I tried finding a dataset, but the U.net model I was building required the following 3 types of file for each image :
+    - The input image
+    - A json file that has the garments annotated 
+    - And a final masked image
+Since, I only had 3 days to produce a binary-garment-masking pipeline, building a robust data-set like I mentioned above was not possible.
+Without a data-set the model was very inaccurate and not usable. 
+The following are the outputs from the untrained U.net model:
+
+![InShot_20240819_142848439](https://github.com/user-attachments/assets/05256e64-36a8-44ff-8a19-15b2a78edc47)
+
+
+## Outcomes and Decisions
+
+- **OpenCV**: Since, the above mentioned models were not delivering to my standards, I started working with OpenCV's inbuilt libraries and started differentiating the garments from the background by using the colors and hues from the garment.
+  
+- **Custom HSV Bounds**: Hence i built a GUI using OpenCV to calculate the HSV value of the sample images and saved these values.
+
+- **Mask-RCNN Threshholding**: While working with the above idea, I was encountering some problems in isolating the garments in some images since the garments and the backgrounds shared the same color. Hence, I used Mask-RCNN for object detection first and then apply HSV bounds to fine-tune the detected garments. A score threshold of 0.5 was used to filter out low-confidence predictions from Mask R-CNN.
 
 ## Code Structure
 
@@ -107,13 +123,13 @@ Here are some sample outputs:
 
 ## Future Improvements
 
-- **Dynamic HSV Bound Adjustment**: Implement a more dynamic approach to adjust HSV bounds based on the image content.
-- **Model Fine-Tuning**: Fine-tune the Mask R-CNN model on a dataset specific to garment detection for improved accuracy.
+- **Model Selection**: With more time and resources, there is a guarantee from me, that I Can build a better model which is much better than the model made by me right now.
 
+- **Data-Set Training** : A robust and well-annotated data set for training, testing and validation can increase the accuracy of this model exponentially.
+  
 ## Conclusion
 
-This pipeline effectively combines the strengths of Mask R-CNN and HSV-based segmentation to accurately mask garment areas in images. It is efficient, easy to use, and produces high-quality results.
+This pipeline effectively combines the strengths of Mask R-CNN and HSV-based segmentation to accurately mask garment areas in images. It is efficient, easy to use, and could produce high-quality results.
 
-## Contact
-
-For any questions or issues, please contact [your email].
+## Author 
+- Jaskirat Singh 
