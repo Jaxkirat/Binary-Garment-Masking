@@ -58,6 +58,13 @@ To use the HSV bounds calculation tool:
 
 3. Adjust the trackbars to set the lower and upper HSV bounds. Press `s` to save the values for the current image, or `ESC` to move to the next image.
 
+###Example
+
+Here is how the boundary calculator works
+
+![Screenshot 2024-08-17 164438](https://github.com/user-attachments/assets/5825761a-24d9-4496-9697-7ab919b0e128)
+
+
 ## Output
 
 The pipeline produces two types of outputs for each image:
